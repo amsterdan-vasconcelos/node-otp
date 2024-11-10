@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres
+    ports:
+      - 5432:5432
+    container_name: node_otp_aula
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+    volumes:
+      - polls_pg_data:/bitname/postgresql
+volumes:
+  polls_pg_data:
