@@ -3,7 +3,7 @@ import express from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 
-import { home } from './routes';
+import { home, users } from './routes';
 
 const server = express();
 
@@ -13,6 +13,7 @@ server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 
 server.use(home.router);
+server.use(users.router);
 
 const port = process.env.PORT;
 
